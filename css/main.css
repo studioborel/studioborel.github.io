@@ -1,7 +1,7 @@
 /* var text-decoration */
 @font-face {
-  font-family: myfont;
-  src: url(../fonts/ufonts.com_tw-cen-mt.ttf);
+  font-family: "Bebas Neue", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 }
 
 /*--
@@ -285,10 +285,14 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 hero area start
 */
 
+#hero-area .img-responsive {
+  margin: calc(-50vw + 50vmin) 0px 0px 0px;
+}
+
 #hero-area .overlayText {
   position: absolute;
-  top: 50%;
-  left: 45%;
+  bottom: 15vh;
+  left: 43%;
   z-index: 1;
   flex-direction: row;
 }
@@ -341,10 +345,10 @@ hero area start
 }
 @keyframes type3 {
   0% {
-    width: calc((20px + 1.5vw) * 0.68 * 3);
+    width: calc((20px + 1.5vw) * 0.68 * 2);
   }
   80% {
-    width: calc((20px + 1.5vw) * 0.68 * 3);
+    width: calc((20px + 1.5vw) * 0.68 * 2);
   }
   100% {
     width: calc((20px + 1.5vw) * 0.68 * 10);
@@ -402,23 +406,24 @@ hero area start
 }
 
 .post-img {
-  flex-basis: 50%;
+  flex-basis: 30%;
   overflow: hidden;
 }
 
 .post-img img {
   transition: all 0.8s ease-out;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
 .post-content {
   background-color: #fff;
   position: relative;
-  flex-basis: 50%;
+  flex-basis: 80%;
   text-align: center;
   padding: 20px;
+  min-height: 200px;
 }
 
 .post-content::before {
@@ -498,6 +503,11 @@ hero area start
   margin-bottom: 20px;
 }
 
+.blog-single-page .post-single-content p {
+  font-family: "Times New Roman", Arial;
+  line-height: 1.8;
+}
+
 .blog-single-page .post-single-content img {
   width: 80vw;
   max-width: 500px;
@@ -524,13 +534,13 @@ hero area start
 }
 
 /*--
-    price Start
+    people Start
 --*/
-#price {
+#people {
   padding: 70px 0px;
 }
 
-#price .block > p {
+#people .block > p {
   color: #9d9d9d;
   font-size: 16px;
   line-height: 26px;
@@ -538,31 +548,31 @@ hero area start
   text-align: center;
 }
 
-#price .block .pricing-list {
+#people .block .pricing-list {
   padding-top: 85px;
 }
 
-#price .block .pricing-list ul {
+#people .block .pricing-list ul {
   padding: 0 0 30px;
   margin: 0;
 }
 
-#price .block .pricing-list ul li {
+#people .block .pricing-list ul li {
   padding: 21px 0px;
 }
 
-#price .block .pricing-list ul li .item .item-title {
+#people .block .pricing-list ul li .item .item-title {
   position: relative;
 }
 
-#price .block .pricing-list ul li .item .item-title h2 {
+#people .block .pricing-list ul li .item .item-title h2 {
   display: inline-block;
   position: relative;
   z-index: 99;
   background: #fff;
 }
 
-#price .block .pricing-list ul li .item .item-title .border-bottom {
+#people .block .pricing-list ul li .item .item-title .border-bottom {
   position: absolute;
   top: 0;
   width: 100%;
@@ -571,17 +581,17 @@ hero area start
   margin-top: 20px;
 }
 
-#price .block .pricing-list ul li .item .item-title span {
+#people .block .pricing-list ul li .item .item-title span {
   float: right;
   color: #938463;
 }
 
-#price .block .pricing-list ul li .item p {
+#people .block .pricing-list ul li .item p {
   padding: 12px 0 0px;
   color: #949494;
 }
 
-#price .block .pricing-list .btn {
+#people .block .pricing-list .btn {
   padding: 28px 105px;
   border-radius: 0px;
   background: none;
@@ -595,7 +605,7 @@ hero area start
   transition: 0.3s all;
 }
 
-#price .block .pricing-list .btn:hover {
+#people .block .pricing-list .btn:hover {
   background: #ff530a;
   color: #fff;
 }
