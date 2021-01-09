@@ -39,11 +39,11 @@
   
   <video class="img-responsive" src="https://www.borel.studio/images/header_vid.mp4" autoplay loop style="margin:-20% 0px 0px 0px; min-height: 50vh;"></video>
   <div class = "overlayText">
-    <h1 class = "be">Beyond</h1>
-    <h1 class = "our">Our</h1>
-    <h1 class = "rel">RELatvity</h1>
+    <div class = "be">Beyond
+    <div class = "our">Our
+    <div class = "rel">Relativity
   </div>
-</section>
+</section>  
 
 
 <!-- Navigation Start  -->
@@ -170,9 +170,9 @@
 							<li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
 								<div class="item">
 									<div class="item-title">
-										<h2>Dongjin Shin</h2>
+										<h2>Dain Kim</h2>
 										<div class="border-bottom"></div>
-										<span>of SNU Medical school</span>
+										<span>of MIT dept. of mathematics</span>
 									</div>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim&amp;&amp;</p>
 								</div>
@@ -181,11 +181,11 @@
 							<li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
 								<div class="item">
 									<div class="item-title">
-										<h2>Dain Kim</h2>
+										<h2>Dongjin Shin</h2>
 										<div class="border-bottom"></div>
-										<span>of MIT dept. of mathematics</span>
+										<span>of SNU Medicine &amp; Statistics</span>
 									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim&amp;&amp;</p>
+									<p>Dong Jin Shin is an undergraduate student at Seoul National University. His research interests include medicine, statistics, and AI. &lt;br&gt; Please visit www.dongjinshin.com for more information.</p>
 								</div>
 							</li>
 							
@@ -233,6 +233,18 @@
 					<div class="col-lg-6">
 						<article class="post wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
 							<div class="post-img">
+								<img src="https://www.borel.studio/images/20210109/antisymmetric.png" alt="post-image" class="img-responsive">
+							</div>
+							<div class="post-content">
+								<h3><a href="https://www.borel.studio/post/20200109/">양자점 시뮬레이션</a></h3>
+								<p>김도헌 교수님 랩에서 인턴을 시작한지 2주일이 되었다. 다른 인턴분과 함께 첫 과제(?</p>
+							</div>
+						</article>
+					</div>
+					
+					<div class="col-lg-6">
+						<article class="post wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
+							<div class="post-img">
 								<img src="https://www.borel.studio/images/blog/blog-img-5.jpg" alt="post-image" class="img-responsive">
 							</div>
 							<div class="post-content">
@@ -262,18 +274,6 @@
 							<div class="post-content">
 								<h3><a href="https://www.borel.studio/post/1/">Hasdfasdfasdfie</a></h3>
 								<p>22</p>
-							</div>
-						</article>
-					</div>
-					
-					<div class="col-lg-6">
-						<article class="post wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
-							<div class="post-img">
-								<img src="https://www.borel.studio/images/blog/blog-img-3.jpg" alt="post-image" class="img-responsive">
-							</div>
-							<div class="post-content">
-								<h3><a href="https://www.borel.studio/post/homestyle-chicken-pot-pie/">Homestyle Chicken Pot Pie</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, veniam! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 							</div>
 						</article>
 					</div>
@@ -427,6 +427,12 @@
 							
 							<!-- post -->
 							<li>
+								<h4><a href="https://www.borel.studio/post/20200109/">양자점 시뮬레이션</a></h4>
+								<p>09 Jan 2021</p>
+							</li>
+							
+							<!-- post -->
+							<li>
 								<h4><a href="https://www.borel.studio/post/red-pepper-miso-wings-2/">Red Pepper Miso Wings 2</a></h4>
 								<p>26 Dec 2018</p>
 							</li>
@@ -434,12 +440,6 @@
 							<!-- post -->
 							<li>
 								<h4><a href="https://www.borel.studio/post/red-pepper-miso-wings/">Red Pepper Miso Wings</a></h4>
-								<p>26 Dec 2018</p>
-							</li>
-							
-							<!-- post -->
-							<li>
-								<h4><a href="https://www.borel.studio/post/1/">Hasdfasdfasdfie</a></h4>
 								<p>26 Dec 2018</p>
 							</li>
 							
@@ -479,6 +479,29 @@
 		</div>
 	</div>
 </footer>
+
+<script>
+	MathJax = {
+	  tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [['$$','$$'], ['\\[', '\\]']],
+		processEscapes: true,
+		processEnvironments: true
+	  },
+	  options: {
+		skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+	  }
+	};
+  
+	window.addEventListener('load', (event) => {
+		document.querySelectorAll("mjx-container").forEach(function(x){
+		  x.parentElement.classList += 'has-jax'})
+	  });
+  
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>	
 
 <!-- JS Plugins -->
 

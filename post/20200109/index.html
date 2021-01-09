@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>양자점 시뮬레이션</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="this is meta description">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://www.borel.studio/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://www.borel.studio/css/slick.css">
+  
+  <link rel="stylesheet" href="https://www.borel.studio/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="https://www.borel.studio/css/animate.min.css">
+  
+  <link rel="stylesheet" href="https://www.borel.studio/css/venobox.css">
+  
+  <link rel="stylesheet" href="https://www.borel.studio/css/main.css">
+  
+  <link rel="stylesheet" href="https://www.borel.studio/css/responsive.css">
+  
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://www.borel.studio/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://www.borel.studio/images/favicon.png" type="image/x-icon">
+
+</head><body><!-- Navigation Start  -->
+
+<nav class="navigation">
+	<div class="container">
+		<div class="block">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- logo -->
+						<a class="navbar-brand" href="https://www.borel.studio">
+							<img class="img-responsive" src="https://www.borel.studio/images/logo.png" alt="BOREL Studio">
+						</a>
+						<!-- logo -->
+					</div>
+
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right" id="top-nav">
+							
+							<li><a href="https://www.borel.studio#hero-area">Home</a></li>
+							
+							<li><a href="https://www.borel.studio#about-us">About Us</a></li>
+							
+							<li><a href="https://www.borel.studio#blog">Blog</a></li>
+							
+							<li><a href="https://www.borel.studio#people">People</a></li>
+							
+							<li><a href="https://www.borel.studio#subscribe">News</a></li>
+							
+							<li><a href="https://www.borel.studio#contact-us">Contact Us</a></li>
+							
+						</ul>
+					</div>
+					
+				</div>
+			</nav>
+		</div>
+	</div>
+</nav><section class="section blog-single-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <img class="img-responsive post-thumb d-inline-block" src="https://www.borel.studio/images/20210109/antisymmetric.png" alt="blog-image">
+                <h1 class="post-title">양자점 시뮬레이션</h1>
+                <ul class="list-inline mb-50 post-meta">
+                    <li class="list-inline-item">by 김재환</li>
+                    <li class="list-inline-item">Saturday, Jan 9, 2021</li>
+                </ul>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="post-single-content">
+                    <p>김도헌 교수님 랩에서 인턴을 시작한지 2주일이 되었다. 다른 인턴분과 함께 첫 과제(?)로 물리 시뮬레이션을 받았는데, 나름 이런 종류의 코딩(물리엔진 등)을 해본적이 있어 물리를 풀어 양자점을 적절한 조건으로 만드는 자동화를 시도했다. 그리고 오늘 첫 완성본이 나왔다. 정확한 서술은 하면 안될 것 같아 적을 수 있는 부분만 간추려 설명해본다.</p>
+<figure>
+    <img src="/images/20210109/LQD_RQD.png"
+         alt="두개의 Quantum dot을 나타낸 그림이다. 왼쪽 큐빗(LQD)와 오른쪽 큐빗(RQD)의 위치와, 이들의 중첩상태인 ground state와 1st excited state의 에너지를 나타냈다. 호핑 적분값은 두 에너지의 차이의 절반으로 정의된다."/> <figcaption>
+            <p>두개의 Quantum dot을 나타낸 그림이다. 왼쪽 큐빗(LQD)와 오른쪽 큐빗(RQD)의 위치와, 이들의 중첩상태인 ground state와 1st excited state의 에너지를 나타냈다. 호핑 적분값은 두 에너지의 차이의 절반으로 정의된다.</p>
+        </figcaption>
+</figure>
+
+<p>10일동안 파이썬과 매트랩으로 50000바이트 정도의 코드를 짰는데, 매트랩과 오토캐드, 퓨전 360을 처음 써봤다는 점에서 상당히 빠른 속도였던 것 같다. 최적화는 다른 문제의 이야기지만 별다른 도움 없이 새로운 무언가를 만들 수 있을만큼의 코딩 실력을 갖추었음이 느껴져서 좋았다. 물론 도와준 친구들이 없었다면 너무 오랜시간을 헤맸을것 같다. 언제나 고마워요!(특히 태규ㅎ)</p>
+<p>양자컴퓨터에서 Universal gate를 만들기 위해서는 CNOT 게이트가 필수적이고, 2QD(Quantum Dot)의 터널링에 의한 에너지텀인 hopping integral 에너지가 GHz 수준으로 높아져야 한다.</p>
+<p>우리는 반도체 양자점에 붙어있는 전압의 크기를 변수로 하는 optimization function을 양자점이 생기는 조건과 호핑 적분값의 조건을 부가해 만들었고 이를 dual annealing기법을 이용해 최적화시켰다.(사실 정확이 무슨 알고리즘인지는 모르겠으나, 대충 신경망에서 lr을 늘렸다 줄였다 하는 것과 비슷하게 작동한다. 더 좋은 알고리즘이 있으면 추천 바랍니다.) 한번 iteration 하는데에 30초 정도의 어마무시한 시간이 걸리기 때문에 수렴하는데 굉장히 오랜 시간이 걸린다. 다음주 월요일에는 원하는 결과를 얻을 수 있기를:)</p>
+<figure>
+    <img src="/images/20210109/hopping_integral.webp"
+         alt="두 양자점의 파동함수 겹침에 의한 스핀 교환력 상호작용으로 2 Qubit Gate인 CNOT Gate를 만들 수 있다. 그나저나 레퍼런스를 어떻게 달아야하는지 모르겠네. 내가 그린 그림으로 대체해야겠다."/> <figcaption>
+            <p>두 양자점의 파동함수 겹침에 의한 스핀 교환력 상호작용으로 2 Qubit Gate인 CNOT Gate를 만들 수 있다. 그나저나 레퍼런스를 어떻게 달아야하는지 모르겠네. 내가 그린 그림으로 대체해야겠다.</p>
+        </figcaption>
+</figure>
+
+<p>hopping integral은 두개의 거의 붙어있는 인접한 Eigen Energy의 차이의 절반인데, 이름에서 볼 수 있듯이 두 양자점의 터널링에 의한 효과가 이 값을 좌우한다. 그래서 우리는 먼저 WKB근사를 사용해서 이 값을 근사적으로 구했는데, WKB 근사의 특성상 2-DEG(2 Dimensional Electron Gas)의 전압을 Dot 두개가 있는 축인 1차원으로 줄여야 하고, 여기에서 오차가 날 수 있다는 단점이 있다. 어쨌든 이렇게 에너지를 근사했는데&hellip; 크게 마음에 들지 않았다. 그 이유는 우리가 만들어야하는 GHz 스케일의 겹침은 실제 에너지( $10^{13} Hz$스케일)의 0.1 %정도로 무시할 수 없기 때문이다. 그래서 그냥 2차원 파동방정식을 풀기로 했다. 정말 다행히도 time indep Schrodinger equation은 실수해가 존재하므로 실수 미분방정식을 푸는 문제로 귀결된다. 먼저 2차원 문제를 풀기 전에 1차원 슈뢰딩거 방정식을 구했다.</p>
+<p>첫 번째 방법은 이용해 미방을 &ldquo;직접&quot;풀어서 1학년 1학기 때 당해버린 Liouville&rsquo;s theorem(아무리 찾아도 복소함수밖에 안나올걸ㅋㅋ)를 이용해 에너지를 구하는 것이다. 파동방정식이 발산하면 안된다는 조건으로 한쪽 끝의 파동함수를 고정시키고 파동방정식을 풀어 노드의 수를 구하고 노드수가 간신히 0개(ground state)가 되도록, 그리고 간신히 1 개(1st excited state)가 되도록 이분탐색을 해주면 된다. 안타깝지만 이 방법을 2차원으로 늘리면 노드가 선으로 생기는데, 이를 분석하는 것은 너무 복잡할 것 같아서 두번째 방법을 사용했다.</p>
+<figure>
+    <img src="/images/20210109/root_0.png"
+         alt="근의 개수가 0개인 경우. 에너지를 더 높여야 한다."/> <figcaption>
+            <p>근의 개수가 0개인 경우. 에너지를 더 높여야 한다.</p>
+        </figcaption>
+</figure>
+
+<figure>
+    <img src="/images/20210109/root_1.png"
+         alt="근의 개수가 1개인 경우. 에너지를 더 낮춰야한다."/> <figcaption>
+            <p>근의 개수가 1개인 경우. 에너지를 더 낮춰야한다.</p>
+        </figcaption>
+</figure>
+
+<p>미방을 직접 푸는 대신, 계를 잘 표현할 수 있는 적절한 basis를 잡아 유한 차원으로 줄여서 파동방정식을 행렬 형태로 만들어서 풀 수도 있다. 우리는 x space에서의 해밀토니안을 알고 있기 때문에 행렬값을 알기 위해서는 base를 x에 대한 함수 $\phi(x)$
+를 사용했고, 경험적으로(퓨리에의 느낌으로 p space(sine 함수)를 시도했는데 왜인지 모르겠으나 썩 좋은 결과를 얻지 못했다.) 이계 미분을 구하기도 쉽고 계산하기도 쉬운 가우시안 함수를 base로 잡았다. 해밀토니안을 구했다면 이를 이용해 고윳값 방정식을 풀기만 하면 됩니다&hellip;만 모든 고윳값을 찾는 것은 굉장히 코스트가 큰 일이다. 여기서도 정말 다행히도 해밀토니안은 허미시안이기 때문에 유한차원의 행렬은 모든 고윳값이 실수다! 여기에서 이번학기에 들은 수치해개가 등장한다. Power Method는 특정 값에 가장 가까운 고윳값을 구하는 방법인데, 찾아보니 에너지 스펙트럼을 구하는 곳에 사용되기도 하는 것 같고 해서 써버렸다. ground state와 1st excited state를 구하는데에만 사용했다. 그리고 재미있는 사실을 알아냈는데 가우시안의 표준편차에 따라서 정확한 에너지가 나올때도 있고, 완전히 틀린 에너지가 나올 때도 있었다. 표준편차가 basis들 간의 간격보다 좁은 경우에는 당연히 &ldquo;자연스러운&rdquo; 파동함수를 나타내기에는 문제가 있을 것이기에 정확한 값이 나오지 않을것이라는 예측을 할 수 있지만(뾰족한 모양이 나올 것이다), 간격보다 훨씬 넓은 경우에도 문제가 생겼다. 지금 생각해봐도 왜 그런지는 잘 모르겠으나, 일단 되는 값을 사용했다. 다시 실험을 해보고 알게되면 수정할게욥 :).</p>
+<p>2차원 파동방정식은 1차원의 행렬방법을 그대로 2차원으로 늘리면 된다. Basis는 두 가우시안의 곱을 사용했고 되고, 이 경우 라플라시안도 쉽게 계산된다. 이 방법은 다 좋은데, Inverse Power Method를 실행하려면 역행렬을 구해야하고, 이 과정이 코스트를 엄청나게 먹는다. 물론 난 훌륭한 쿠다 구현체인 torch를 사용했다. 그럼에도 base 개수를 행 개수로 가지는 정사각행렬의 역행렬을 구해야 되기 때문에 엄청난 메모리와 자원을 필요로한다. 신기하면서 다행히도 1차원에서 base개수가 80개정도만 되어도 꽤 높은 정확도로 에너지 차이를 구해줌을 확인했고, 최종적으로는 6400 by 6400행렬로 슈뢰딩거 방정식을 풀었다. 호핑 에너지를 계산하는 과정에서는 이 역행렬 계산의 코스트가 압도적으로 높았으나, 교수님의 2080 Ti의 가호로 나름 빠르게 계산한 것 같다.</p>
+<p>이를 조합하면 두 상태의 파동함수 모양을 나타낼 수 있는데, 이게 참 예쁘다. 계산이 끝나면 더 예쁜 그림으로 대체하겠다.</p>
+<figure>
+    <img src="/images/20210109/symmetric_wave_ftn.png"
+         alt="ground state는 대칭 파동함수(ground state)이다. 규격화가 안되어있으니 z축 단위에 너무 놀라지 않아도 된다."/> <figcaption>
+            <p>ground state는 대칭 파동함수(ground state)이다. 규격화가 안되어있으니 z축 단위에 너무 놀라지 않아도 된다.</p>
+        </figcaption>
+</figure>
+
+<figure>
+    <img src="/images/20210109/antisymmetric.png"
+         alt="1st excited state는 ground보다 에너지가 살짝 높으며, 반대칭 파동함수이다. 두 그림이 대각선에 있는건 미적인 효과때문이 아닌 수평으로 어떻게 넣는지 몰라서 그런 것인데, 수평으로 넣는 방법을 알게 되어도 안바꿀거다. 이것도 좋은 것 같다."/> <figcaption>
+            <p>1st excited state는 ground보다 에너지가 살짝 높으며, 반대칭 파동함수이다. 두 그림이 대각선에 있는건 미적인 효과때문이 아닌 수평으로 어떻게 넣는지 몰라서 그런 것인데, 수평으로 넣는 방법을 알게 되어도 안바꿀거다. 이것도 좋은 것 같다.</p>
+        </figcaption>
+</figure>
+
+<p>이제 이 에너지를 알았으면 최적화만 해주면 된다 :) 당연히 라이브러리 썼고, dual annealing 기법을 사용했다. 결과는 글로벌 미니멈이 잘 구해지는 것 같다. 야호.</p>
+<p>지금 서술한 내용들은 양자역학이나 양자컴에 대한 기본 지식이 없으면 알아듣기 힘든 내용임에도, 쉽게 풀어쓰려고 애썼다. 인턴이 좀 한산해지면 양자역학과 양자컴 포스팅을 진행하겠다. 지금은 너무 빡세다.. 질문이나 개선점이 있으면 댓글로 달아주시면 감사하겠습니다:)</p>
+<p>질문)</p>
+<ol>
+<li>
+<p>경계조건 복잡한(퍼텐셜이나 특정 블록의 전위가 주어진 경우) 푸아송 방정식 풀어주는 라이브러리나 앱이 있으면 추천 바랍니다!</p>
+</li>
+<li>
+<p>2차원 파동방정식을 푸는 라이브러리나 알고리즘이 있으면 추천 바랍니다!</p>
+</li>
+<li>
+<p>global minimization에 대한 더 좋은 알고리즘이나 라이브러리가 있으면 추천 바랍니다!</p>
+</li>
+<li>
+<p>이 인턴을 하기 전부터 하고 싶었던 시뮬레이션은 스핀과 전자 상호작용까지 고려된 2-전자계의 양자점 시뮬레이션이었는데, 2차원을 계산하는데에도 10초가 걸린다면 4차원+2스핀을 계산하는데에는 너무 많은 시간이 걸릴 것 같습니다. 관련한 논문이나 알고리즘을 아신다면 추천 바랍니다!</p>
+</li>
+</ol>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="block wow fadeInLeft" data-wow-delay="200ms">
+					<h3> CONTACT <span>INFO</span>  </h3>
+					<div class="info">
+						<ul>
+							
+							<li>
+								<h4><i class="fa fa-phone"></i>Telephone</h4>
+								<p>010-7125-9407</p>
+							</li>
+							
+							<li>
+								<h4><i class="fa fa-map-marker"></i>Address</h4>
+								<p>지하 1630-13 KR 서울특별시 관악구 봉천동 1층</p>
+							</li>
+							
+							<li>
+								<h4><i class="fa fa-envelope"></i>E mail</h4>
+								<p><a href="mailto:borel.nicemeal@gmail.com">borel.nicemeal@gmail.com</a></p>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="block wow fadeInLeft" data-wow-delay="700ms">
+					<h3> LATEST <span>BLOG</span> </h3>
+					<div class="blog">
+						<ul>
+							
+							<!-- post -->
+							<li>
+								<h4><a href="https://www.borel.studio/post/20200109/">양자점 시뮬레이션</a></h4>
+								<p>09 Jan 2021</p>
+							</li>
+							
+							<!-- post -->
+							<li>
+								<h4><a href="https://www.borel.studio/post/red-pepper-miso-wings-2/">Red Pepper Miso Wings 2</a></h4>
+								<p>26 Dec 2018</p>
+							</li>
+							
+							<!-- post -->
+							<li>
+								<h4><a href="https://www.borel.studio/post/red-pepper-miso-wings/">Red Pepper Miso Wings</a></h4>
+								<p>26 Dec 2018</p>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="block wow fadeInLeft" data-wow-delay="1100ms">
+					<div class="social-media-link">
+						<h3> Follow <span>US</span> </h3>
+						<ul>
+							
+							<li><a href="https://fb.com/themefisher"><i class="fa fa-facebook"></i></a></li>
+							
+							<li><a href="https://fb.com/themefisher"><i class="fa fa-youtube"></i></a></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+
+<footer id="footer-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="block">
+					<p>Copyright © 2020 Bootstrapped from <a href="https://themefisher.com">Themefisher</a>, <a href="https://gethugothemes.com">Gethugothemes</a>, designed &amp; edited By Simo Ryu</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+	MathJax = {
+	  tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [['$$','$$'], ['\\[', '\\]']],
+		processEscapes: true,
+		processEnvironments: true
+	  },
+	  options: {
+		skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+	  }
+	};
+  
+	window.addEventListener('load', (event) => {
+		document.querySelectorAll("mjx-container").forEach(function(x){
+		  x.parentElement.classList += 'has-jax'})
+	  });
+  
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>	
+
+<!-- JS Plugins -->
+
+<script src="https://www.borel.studio/js/jquery.min.js"></script>
+
+<script src="https://www.borel.studio/js/bootstrap.min.js"></script>
+
+<script src="https://www.borel.studio/js/slick.min.js"></script>
+
+<script src="https://www.borel.studio/js/wow.min.js"></script>
+
+<script src="https://www.borel.studio/js/venobox.min.js"></script>
+
+<script src="https://www.borel.studio/js/main.js"></script>
+
+
+<!-- google analitycs -->
+
+<script>
+	(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+	ga('create', 'Your ID', 'auto');
+	ga('send', 'pageview');
+</script>
+</body>
+</html>

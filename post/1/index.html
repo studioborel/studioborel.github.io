@@ -83,7 +83,7 @@
                 <img class="img-responsive post-thumb d-inline-block" src="https://www.borel.studio/images/blog/blog-img-3.jpg" alt="blog-image">
                 <h1 class="post-title">Hasdfasdfasdfie</h1>
                 <ul class="list-inline mb-50 post-meta">
-                    <li class="list-inline-item"></li>
+                    <li class="list-inline-item">by </li>
                     <li class="list-inline-item">Wednesday, Dec 26, 2018</li>
                 </ul>
             </div>
@@ -135,6 +135,12 @@
 							
 							<!-- post -->
 							<li>
+								<h4><a href="https://www.borel.studio/post/20200109/">양자점 시뮬레이션</a></h4>
+								<p>09 Jan 2021</p>
+							</li>
+							
+							<!-- post -->
+							<li>
 								<h4><a href="https://www.borel.studio/post/red-pepper-miso-wings-2/">Red Pepper Miso Wings 2</a></h4>
 								<p>26 Dec 2018</p>
 							</li>
@@ -142,12 +148,6 @@
 							<!-- post -->
 							<li>
 								<h4><a href="https://www.borel.studio/post/red-pepper-miso-wings/">Red Pepper Miso Wings</a></h4>
-								<p>26 Dec 2018</p>
-							</li>
-							
-							<!-- post -->
-							<li>
-								<h4><a href="https://www.borel.studio/post/1/">Hasdfasdfasdfie</a></h4>
 								<p>26 Dec 2018</p>
 							</li>
 							
@@ -187,6 +187,29 @@
 		</div>
 	</div>
 </footer>
+
+<script>
+	MathJax = {
+	  tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [['$$','$$'], ['\\[', '\\]']],
+		processEscapes: true,
+		processEnvironments: true
+	  },
+	  options: {
+		skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+	  }
+	};
+  
+	window.addEventListener('load', (event) => {
+		document.querySelectorAll("mjx-container").forEach(function(x){
+		  x.parentElement.classList += 'has-jax'})
+	  });
+  
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>	
 
 <!-- JS Plugins -->
 

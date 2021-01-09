@@ -281,11 +281,16 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   background: #ff5333;
 }
 
+/*
+hero area start
+*/
+
 #hero-area .overlayText {
   position: absolute;
   top: 50%;
   left: 45%;
   z-index: 1;
+  flex-direction: row;
 }
 #hero-area .overlayText .be {
   color: white;
@@ -314,35 +319,35 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 }
 @keyframes type {
   0% {
-    width: 1.38ch;
+    width: calc((20px + 1.5vw) * 0.68);
   }
   50% {
-    width: 1.38ch;
+    width: calc((20px + 1.5vw) * 0.68);
   }
   100% {
-    width: 7ch;
+    width: calc((20px + 1.5vw) * 0.68 * 7);
   }
 }
 @keyframes type2 {
   0% {
-    width: 1.38ch;
+    width: calc((20px + 1.5vw) * 0.68);
   }
   70% {
-    width: 1.38ch;
+    width: calc((20px + 1.5vw) * 0.68);
   }
   100% {
-    width: 10ch;
+    width: calc((20px + 1.5vw) * 0.68 * 7);
   }
 }
 @keyframes type3 {
   0% {
-    width: 3.7ch;
+    width: calc((20px + 1.5vw) * 0.68 * 3);
   }
   80% {
-    width: 3.7ch;
+    width: calc((20px + 1.5vw) * 0.68 * 3);
   }
   100% {
-    width: 10ch;
+    width: calc((20px + 1.5vw) * 0.68 * 10);
   }
 }
 
@@ -481,6 +486,8 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 
 .blog-single-page .post-thumb {
   margin-bottom: 10px;
+  width: 80vw;
+  max-width: 500px;
 }
 
 .blog-single-page .post-title {
@@ -488,6 +495,26 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 }
 
 .blog-single-page .post-meta {
+  margin-bottom: 20px;
+}
+
+.blog-single-page .post-single-content img {
+  width: 80vw;
+  max-width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-single-page .post-single-content figcaption p {
+  width: 80vw;
+  max-width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
@@ -967,4 +994,11 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   border-radius: 0px;
   border: 0px;
   padding: 10px 25px;
+}
+code.has-jax {
+  font: inherit;
+  font-size: 100%;
+  background: inherit;
+  border: inherit;
+  color: #515151;
 }
